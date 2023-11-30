@@ -18,3 +18,8 @@ func ValueOrDefault[T any](v *T, d T) T {
 
 	return *v
 }
+
+// ValueToPtr convert value to pointer address of value
+func ValueToPtr[T any](v T) *T {
+	return &v
+}

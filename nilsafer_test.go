@@ -173,3 +173,14 @@ func TestValueOrDefault(t *testing.T) {
 		}
 	})
 }
+
+func TestValueToPtr(t *testing.T) {
+	t.Run("safe string success with value", func(t *testing.T) {
+		var s = "hello"
+		result := ValueToPtr(s)
+		want := &s
+		if *result != *want {
+			t.Errorf("Unexpected result %v, want %v", *result, *want)
+		}
+	})
+}
